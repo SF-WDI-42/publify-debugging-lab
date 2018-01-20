@@ -65,7 +65,7 @@ function tag_manager() {
   var tagApi = jQuery("#article_keywords").tagsManager({
     prefilled: $('#article_keywords').val()
   });
-
+  
   jQuery("#article_keywords").typeahead({
     name: 'tags',
     limit: 15,
@@ -76,7 +76,7 @@ function tag_manager() {
 }
 
 function save_article_tags() {
-  $('#article_keywords').val($('#article_form').find('input[name="hidden-article[keywords]"]'));
+  $('#article_keywords').val($('#article_form').find('input[name="hidden-article[keywords]"]').val());
 }
 
 function doneTyping () {
