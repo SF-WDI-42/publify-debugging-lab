@@ -71,7 +71,7 @@ function tag_manager() {
     limit: 15,
     prefetch: '/admin/content/auto_complete_for_article_keywords'
   }).on('typeahead:selected', function (e, d) {
-    tagApi.tagsManager("pushTag", d.value)
+    tagApi.tagsManager("pushTag", d.value);
   });
 }
 
