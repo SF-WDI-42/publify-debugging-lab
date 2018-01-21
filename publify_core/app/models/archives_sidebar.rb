@@ -31,7 +31,11 @@ class ArchivesSidebar < Sidebar
 
     @archives = article_counts.map do |entry|
       month = (entry.month.to_i % 12) + 1
-      year = entry.year.to_i
+      if (entry.month.to_i % 12) == 0 then
+        year = entry.year.to_i + 1
+      else 
+        year = entry.year.to_i
+      end
       {
         name: I18n.l(Date.new(year, month), format: '%B %Y'),
         month: month,
