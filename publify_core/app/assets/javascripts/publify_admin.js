@@ -65,7 +65,7 @@ function tag_manager() {
   var tagApi = jQuery("#article_keywords").tagsManager({
     prefilled: $('#article_keywords').val()
   });
- 
+
   jQuery("#article_keywords").typeahead({
     name: 'tags',
     limit: 15,
