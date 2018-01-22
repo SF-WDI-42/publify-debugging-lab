@@ -30,12 +30,8 @@ class ArchivesSidebar < Sidebar
     article_counts = Content.find_by_sql(["select count(*) as count, #{date_func} from contents where type='Article' and published = ? and published_at < ? group by year,month order by year desc,month desc limit ? ", true, Time.now, count.to_i])
 
     @archives = article_counts.map do |entry|
-      month = (entry.month.to_i % 12) + 1
-      if (entry.month.to_i % 12) == 0 then
-        year = entry.year.to_i + 1
-      else 
-        year = entry.year.to_i
-      end
+      month = entry.month.to_i 
+      year = entry.year.to_i
       {
         name: I18n.l(Date.new(year, month), format: '%B %Y'),
         month: month,
